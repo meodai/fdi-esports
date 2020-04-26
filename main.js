@@ -15,12 +15,12 @@ const parseEntries = entries => {
 
     currentRowArr.push(e.content.$t);
   });
-
+  
   return entriesArr;
 };
 
 const $container = document.querySelector('[data-entries]');
-const gSheetJSONsrc = 'https://spreadsheets.google.com/feeds/cells/1O36xe8y9oOeYBOr0mvS7NZLDm83hilO0WB9f75CRnJA/1/public/full?alt=json&rnd=' + 1000 * Math.random()
+const gSheetJSONsrc = 'https://spreadsheets.google.com/feeds/cells/1O36xe8y9oOeYBOr0mvS7NZLDm83hilO0WB9f75CRnJA/1/public/full?alt=json&rnd=' + (1000 * Math.random() + (Date().now))
 
 fetch(gSheetJSONsrc).then((resp) => (resp.json())).then((body) => {
   const entries = [...body.feed.entry];
