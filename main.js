@@ -28,6 +28,9 @@ fetch(gSheetJSONsrc).then((resp) => (resp.json())).then((body) => {
   const entries = [...body.feed.entry];
   const entriesArr = [...parseEntries(entries)];
   entriesArr.shift();
+  
+  entriesArr.sort((a, b) => (0.5 - Math.random()));
+  
   const entriesHTML = entriesArr.reduce((r, d) => (
     r + `<details><summary><strong>[FDI]</strong> ${d[1]}</summary><p>${d[2]}</p></details>`
   ),'')
