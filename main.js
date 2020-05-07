@@ -4,17 +4,19 @@ const parseEntries = entries => {
 
   let currentRowArr = [];
 
-  entries.forEach(e => {
-    const localRow = parseInt(e.gs$cell.row);
-    
+  entries.forEach(entry => {
+    const localRow = parseInt(entry.gs$cell.row);
+
     if (currentRow != localRow) {
       currentRow = localRow;
       entriesArr.push([...currentRowArr]);
       currentRowArr = [];
-    };
+    }
 
-    currentRowArr.push(e.content.$t);
+    currentRowArr.push(entry.content.$t);
   });
+
+  entriesArr.push([...currentRowArr]);
   
   return entriesArr;
 };
