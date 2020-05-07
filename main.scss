@@ -10,6 +10,43 @@
   cursor: none;
 }
 
+.title {
+  position: relative;
+  z-index: -1;
+}
+.fdi {
+  position: absolute;
+  top: 5.5rem;
+  left: 3.6rem;
+  pointer-events: none;
+  //outline: 10px solid pink;
+  i {
+    position: absolute;
+    display: block;
+    transform: rotate(var(--rotation));
+  }
+
+  span {
+    position: absolute;
+    display: block;
+    width: .15rem;
+    height: .25rem;
+    will-change: transform;
+    background-color: var(--color);
+    animation: fliegen calc(5s * var(--rnd)) infinite cubic-bezier(0.190, 1.000, 0.220, 1.000);
+  }
+}
+
+@keyframes fliegen {
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(calc(40vh + 50vh * var(--rnd))) rotateZ(calc(1060deg * var(--rnd))); 
+  }
+}
+
 a {
   color: white;
 
@@ -32,8 +69,9 @@ a {
 }
 
 h1, h2 {
-  margin-top: .5em;
-  margin-left: -.5rem;
+  margin-top: 1.5em;
+  margin-bottom: 1rem;
+  margin-left: -1rem;
 }
 
 body {
@@ -67,7 +105,9 @@ details {
 summary {
   font-size: 1.2em;
   margin-bottom: .25em;
-  
+  &:focus {
+    outline: none;
+  }
 }
 
 .outro {

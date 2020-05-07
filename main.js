@@ -41,4 +41,16 @@ window.addEventListener('mousemove', (e) => {
   requestAnimationFrame(() => {
     $cur.style.transform = `translate(${e.pageX}px,${e.pageY}px)`;
   });
-})
+});
+
+const $fudikontainer = document.querySelector('[data-fudikontainer]');
+
+const fuddiConfetti = () => {
+  const konfetti = (new Array(Math.round(200))).fill('').reduce((r, actuel) => (
+    r + `<i class="confetti" style="--rotation: ${-30 + Math.random() * 60}deg; --color: hsl(${Math.random() * 360},100%,70%); --rnd: ${Math.random()}"><span></span></i>`
+  ), '');
+  
+  $fudikontainer.innerHTML = konfetti;
+}
+
+fuddiConfetti();
