@@ -30,9 +30,11 @@ fetch(gSheetJSONsrc).then((resp) => (resp.json())).then((body) => {
   entriesArr.shift();
   
   entriesArr.sort((a, b) => (0.5 - Math.random()));
+
+  console.log(entriesArr)
   
   const entriesHTML = entriesArr.reduce((r, d) => (
-    r + `<details><summary><strong>[FDI]</strong> ${d[1]}</summary><p>${d[2]}</p></details>`
+    r + `<details><summary><strong>[FDI]</strong> ${d[1]}</summary><p>${d[2]}</p>${d.length > 3 ? `<img src="${d[3]}" alt="${d[1]}" />`: '' }</details>`
   ),'')
 
   $container.innerHTML = entriesHTML;

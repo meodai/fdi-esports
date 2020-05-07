@@ -4,7 +4,7 @@
   color: #fff;
   background: #212121;
   line-height: 1.4;
-  //text-shadow: 0 1px .25rem rgba(#212121, .75);
+  //  text-shadow: 0 1px .25rem rgba(#212121, .75);
   cursor: none;
 }
 
@@ -106,12 +106,16 @@ body {
   background-repeat: 10px; 
 }
 
-p {
+p, img {
   max-width: 20rem;
 }
 
 img {
-  max-width: 100%;
+  max-width: 12rem;
+  display: block;
+  margin-top: 1rem;
+  margin-left: 1.3rem;
+  margin-bottom: 2rem;
 }
 
 details {
