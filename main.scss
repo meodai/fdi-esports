@@ -10,6 +10,22 @@
   cursor: none;
 }
 
+a {
+  color: white;
+
+  &::after {
+    position: relative;
+    top: -.2em;
+    content: '➚';
+    display: inline-block;
+    margin-left: 0.3em;
+    font-size: .75em;
+  }
+  &:hover {
+    text-decoration: none;
+  } 
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -42,12 +58,21 @@ img {
 }
 
 details {
-  margin-top: .6em;
-}
-summary {
-  margin-bottom: .25em;
+  margin-top: 1em;
+  p {
+    margin-left: 1.4em;
+  }
 }
 
+summary {
+  font-size: 1.2em;
+  margin-bottom: .25em;
+  
+}
+
+.outro {
+  margin-top: 4rem;
+}
 .logo {
   display: block;
   width: 7rem;
